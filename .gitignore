@@ -1,2 +1,4 @@
 *.ical
 .gitattributes
+ha*.*
+hc*.*
