@@ -50,10 +50,11 @@ ex=[]
 with open('ex.csv') as f:
     reader = csv.reader(f)
     for row in reader:
-        st= dt.strptime (row[0],'%Y%m%d')
-        ed= dt.strptime (row[1],'%Y%m%d')+timedelta(1)
-        for d in date_range(st,ed):
-            ex.append(d)
+        if len(row)>0:
+            st= dt.strptime (row[0],'%Y%m%d')
+            ed= dt.strptime (row[1],'%Y%m%d')+timedelta(1)
+            for d in date_range(st,ed):
+                ex.append(d)
 
 ctx=''
 with open('import.csv') as f:
